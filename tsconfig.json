@@ -11,6 +11,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
+    "outDir": "server/dist",
     "skipLibCheck": true,
     "allowJs": true
   },
