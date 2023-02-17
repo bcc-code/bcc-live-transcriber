@@ -20,15 +20,19 @@ const editable = !! location.search.includes('admin')
 <template>
   <div class="bg-gray-100 p-4 w-screen h-screen overflow-y-auto" ref="scroller">
     <Editor :editable="editable" v-model="content" class="p-1 text-lg bg-white"/>
-    <pre class="p-4" v-if="editable">
-  # Stor title | ## Mindre stor title | ###
-  @Bibelvers 3:1-2
-  --- Horizontal linje
-  *Italic text* | Cmd+I
-  **Bold text** | Cmd+B
-  ***Bold and italic text*** | Cmd+B Cmd+I
-  ~~Strikethrough text~~
-    </pre>
+    <details v-if="editable">
+      <summary>Vis Hjelp</summary>
+      <pre class="p-4">
+    # Stor title | ## Mindre stor title | ###
+    [@] + (biblebok navn) + [mellomrom] + (kaptital nummer) + [:] + (fra vers nummer) + [-] + (til vers nummer)
+    @Bibelvers 3:1-2
+    --- Horizontal linje
+    *Italic text* | Cmd+I
+    **Bold text** | Cmd+B
+    ***Bold and italic text*** | Cmd+B Cmd+I
+    ~~Strikethrough text~~
+      </pre>
+    </details>
   </div>
 </template>
 

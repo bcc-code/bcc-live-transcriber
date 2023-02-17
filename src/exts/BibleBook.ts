@@ -7,6 +7,7 @@ import {VueRenderer} from "@tiptap/vue-3";
 import ChoiceList from "../components/ChoiceList.vue";
 import tippy from "tippy.js";
 import books from "../nb_bible.json";
+import tipAttr from './tipAttr_util';
 
 export type BibleBookOptions = {
     HTMLAttributes: Record<string, any>,
@@ -140,33 +141,8 @@ export const BibleBook = Node.create<BibleBookOptions>({
 
     addAttributes() {
         return {
-            id: {
-                default: null,
-                parseHTML: element => element.getAttribute('data-id'),
-                renderHTML: attributes => {
-                    if (!attributes.id) {
-                        return {}
-                    }
-
-                    return {
-                        'data-id': attributes.id,
-                    }
-                },
-            },
-
-            label: {
-                default: null,
-                parseHTML: element => element.getAttribute('data-label'),
-                renderHTML: attributes => {
-                    if (!attributes.label) {
-                        return {}
-                    }
-
-                    return {
-                        'data-label': attributes.label,
-                    }
-                },
-            },
+            id: tipAttr('id'),
+            label: tipAttr('label'),
         }
     },
 

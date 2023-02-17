@@ -5,6 +5,7 @@ import { PluginKey } from 'prosemirror-state'
 import Suggestion, { SuggestionOptions } from '@tiptap/suggestion'
 import {VueNodeViewRenderer} from "@tiptap/vue-3";
 import Verse from "../components/Verse.vue";
+import tipAttr from './tipAttr_util';
 
 export type BibleVerseOptions = {
     HTMLAttributes: Record<string, any>,
@@ -16,22 +17,6 @@ export type BibleVerseOptions = {
 }
 
 export const BibleVersePluginKey = new PluginKey('bible-verse')
-
-function tipAttr(att: string) {
-    return {
-        default: null,
-        parseHTML: (element: Element) => element.getAttribute(`data-${att}`),
-        renderHTML: (attributes: any) => {
-            if (!attributes[att]) {
-                return {}
-            }
-
-            return {
-                [`data-${att}`]: attributes[att]
-            }
-        },
-    }
-}
 
 export const BibleVerse = Node.create({
     name: 'bible-verse',
