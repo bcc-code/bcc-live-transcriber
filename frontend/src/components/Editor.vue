@@ -44,8 +44,8 @@ const proseMirrorJson = yDocToProsemirrorJSON(ydoc);
 
 // Set up the Hocuspocus WebSocket provider
 new HocuspocusProvider({
-  url: `wss://transcriber.bcchorten.no`,
-  name: '2c89346f-5a0d-48ff-9af1-aa371d1b2213',
+  url: `wss://horten-transcriber.up.railway.app`,
+  name: 'b789397f-c9e9-4679-a97a-a458f4ff51f1',
   parameters: {
     readOnly: props.editable ? false : true,
   },
