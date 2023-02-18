@@ -8,18 +8,23 @@ Using the `bcc-code/bible-server` we currently support the Norwegian bible.
 
 Used for setting up the real time communication between clients
 
- - `cd server` 
  - `npm install`
  - `npm start`
 
 ## Setup Frontend
 
+ - `cd frontend`
  - `npm install`
  - `npm start`
 
 Open browser and visit http://localhost:3000/?admin to be the transcriber.
 In a different browser visit http://localhost:3000 to be the viewer.
 
+
+## Implemented
+
+-[x] Real time communication between clients
+-[x] Transcriber can insert bible verses (Norwegian)
 
 ### Todo
 
