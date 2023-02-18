@@ -4,6 +4,8 @@ const path = require('path');
 const url = require('url');
 
 const server = Server.configure({
+    port: process.env.PORT || 3000,
+
     async connected(args) {
         console.log('Connected');
     },
@@ -48,4 +50,4 @@ const server = Server.configure({
     },
 })
 
-server.listen(process.env.PORT || 3000);
+server.listen();
