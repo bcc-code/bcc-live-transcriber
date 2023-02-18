@@ -13,9 +13,9 @@ const server = Server.configure({
     async onRequest({ request, response }) {
         const parsedUrl = url.parse(request.url);
 
-        let pathname = `dist${parsedUrl.pathname}`;
+        let pathname = `public${parsedUrl.pathname}`;
         console.log(pathname);  
-        if (pathname === 'dist/') pathname = 'dist/index.html'; // default to index.html (e.g. when requesting /
+        if (pathname === 'public/') pathname = 'public/index.html'; // default to index.html (e.g. when requesting /
         // based on the URL path, extract the file extension. e.g. .js, .css, ...
         const ext = path.parse(pathname).ext;
         // maps file extension to MIME type
